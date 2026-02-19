@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Request Blood</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+  <aside class="sidebar">
+    <h3>Patient Panel</h3>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="request-blood.html" class="active">Request Blood</a>
+    <a href="track-request.html">Track Request</a>
+    <a href="../login.html">Logout</a>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">Blood Request Form</div>
+
+    <div class="content">
+      <div class="card-box">
+
+        <label>Blood Group</label>
+        <select>
+          <option>A+</option>
+          <option>B+</option>
+          <option>O+</option>
+          <option>AB+</option>
+        </select>
+        <br><br>
+
+        <label>Units Required</label>
+        <input type="number" min="1">
+        <br><br>
+
+        <label>Upload Doctor Prescription</label>
+        <input type="file">
+        <br><br>
+
+        <button>Submit Request</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

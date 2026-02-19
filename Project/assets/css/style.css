@@ -1,0 +1,21 @@
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.btn-danger {
+  background-color: #c62828;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #a91d1d;
+}
+
+.form-control, .form-select {
+  border-radius: 6px;
+}

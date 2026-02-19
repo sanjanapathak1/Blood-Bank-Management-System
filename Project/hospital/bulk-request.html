@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bulk Blood Request</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+
+  <aside class="sidebar">
+    <h3>Hospital Panel</h3>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="bulk-request.html" class="active">Bulk Request</a>
+    <a href="track-request.html">Track Requests</a>
+    <a href="reports.html">Reports</a>
+    <a href="../login.html">Logout</a>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">Bulk Blood Request</div>
+
+    <div class="content">
+      <div class="card-box">
+
+        <label>Blood Group</label>
+        <select>
+          <option>A+</option>
+          <option>B+</option>
+          <option>O+</option>
+          <option>AB+</option>
+        </select>
+        <br><br>
+
+        <label>Required Units</label>
+        <input type="number" min="1">
+        <br><br>
+
+        <label>Upload Prescription</label>
+        <input type="file">
+        <br><br>
+
+        <button>Submit Bulk Request</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
