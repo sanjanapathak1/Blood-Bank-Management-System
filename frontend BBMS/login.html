@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>LifeLink - Login</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!-- Back Button - Top Left Corner -->
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+    </a>
+
+    <div class="background left-bg">
+        <img src="img/left.png" alt="Login Background" onerror="this.style.display='none'">
+    </div>
+
+    <div class="login-container">
+        <div class="login-box">
+            <!-- Logo -->
+            <div class="logo2">
+                <img src="img/logo2.png" alt="GIVEALIFE" onerror="this.style.display='none'">
+            </div>
+            
+            <!-- Header -->
+            <div class="header-text">
+                <h2>Login to your account</h2>
+                <p>Login to access your account</p>
+            </div>
+
+            <!-- Form -->
+            <form id="loginForm">
+                <!-- Email -->
+                <div class="input-group">
+                    <label>Email</label>
+                    <div class="input-field">
+                        <i class="far fa-envelope"></i>
+                        <input type="email" placeholder="john.doe@gmail.com" value="john.doe@gmail.com" required>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Enter password" id="password" required>
+                        <i class="far fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <!-- Role -->
+                <div class="input-group">
+                    <label>Role</label>
+                    <div class="input-field">
+                        <i class="fas fa-user-tag"></i>
+                        <select required>
+                            <option value="" disabled selected>Select Role</option>
+                            <option value="donor">Donor</option>
+                            <option value="staff">Staff Member</option>
+                                                        
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Remember Me & Forgot -->
+                <div class="row">
+                    <label class="checkbox">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot">Forgot Password?</a>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">Login</button>
+
+                <!-- Signup Link -->
+                <p class="signup-text">
+                    Don't have an account? <a href="#">Sign up</a>
+                </p>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>Or login with</span>
+                </div>
+
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="background right-bg" id="rightBackground">
+        <img src="img/right.png" alt="Login Background" onerror="this.style.display='none'">
+    </div>
+
+    <script>
+        // Password toggle
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const type = password.type === 'password' ? 'text' : 'password';
+            password.type = type;
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Form submit
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Login successful! (Demo)');
+        });
+
+        // Back button confirmation (optional)
+        document.querySelector('.back-button').addEventListener('click', function(e) {
+            // Agar chahte ho to confirmation de sakte ho
+            // const confirmBack = confirm('Go back to home page?');
+            // if (!confirmBack) {
+            //     e.preventDefault();
+            // }
+        });
+    </script>
+</body>
+</html>

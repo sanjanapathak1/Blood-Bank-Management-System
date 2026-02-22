@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>LifeLink - Sign Up</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+    <!-- Back Button - Top Left Corner -->
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Home</span>
+    </a>
+
+    <!-- Background Images -->
+    <div class="background left-bg">
+        <img src="img/left.png" alt="Background" onerror="this.style.display='none'">
+    </div>
+
+    <div class="signup-container">
+        <div class="signup-box">
+            <!-- Logo -->
+            <div class="logo2">
+                <img src="img/logo2.png" alt="GIVEALIFE" onerror="this.style.display='none'">
+            </div>
+                       
+            <!-- Header -->
+            <div class="header-text">
+                <h2>Create your account</h2>
+                <p>Let's get you all set up so you can access your personal account.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="signupForm">
+                <!-- First Name & Last Name Row -->
+                <div class="row-2">
+                    <div class="input-group half">
+                        <label>First Name</label>
+                        <div class="input-field">
+                            <i class="far fa-user"></i>
+                            <input type="text" placeholder="John" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group half">
+                        <label>Last Name</label>
+                        <div class="input-field">
+                            <i class="far fa-user"></i>
+                            <input type="text" placeholder="Doe" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label>Email</label>
+                    <div class="input-field">
+                        <i class="far fa-envelope"></i>
+                        <input type="email" placeholder="john.doe@gmail.com" required>
+                    </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <div class="input-field">
+                        <i class="fas fa-phone-alt"></i>
+                        <input type="tel" placeholder="+1 234 567 8900" required>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Enter password" id="password" required>
+                        <i class="far fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+                </div>
+
+                <!-- Confirm Password -->
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Confirm password" id="confirmPassword" required>
+                        <i class="far fa-eye toggle-password" id="toggleConfirmPassword"></i>
+                    </div>
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="terms-row">
+                    <label class="checkbox">
+                        <input type="checkbox" required>
+                        <span>I agree to all the <a href="#">Terms</a> and <a href="#">Privacy Policies</a></span>
+                    </label>
+                </div>
+
+                <!-- Create Account Button -->
+                <button type="submit" class="signup-btn">Create account</button>
+
+                <!-- Login Link -->
+                <p class="login-text">
+                    Already have an account? <a href="login.html">Login</a>
+                </p>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>Or Sign up with</span>
+                </div>
+
+                <!-- Social Signup -->
+                <div class="social-signup">
+                    <button type="button" class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button type="button" class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="background right-bg">
+        <img src="img/right.png" alt="Background" onerror="this.style.display='none'">
+    </div>
+
+    <script>
+        // Password toggle for password field
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const password = document.getElementById('password');
+            const type = password.type === 'password' ? 'text' : 'password';
+            password.type = type;
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Password toggle for confirm password field
+        document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+            const confirmPassword = document.getElementById('confirmPassword');
+            const type = confirmPassword.type === 'password' ? 'text' : 'password';
+            confirmPassword.type = type;
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Form submit with validation
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            // Password match validation
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Password strength validation (optional)
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long!');
+                return;
+            }
+            
+            alert('Account created successfully! (Demo)');
+            // Redirect to login page after signup
+            // window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

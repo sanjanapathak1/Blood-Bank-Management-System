@@ -1,0 +1,31 @@
+:root {
+    /* Colors */
+    --primary-blue: #2985fd;
+    --primary-light: #47b9ff;
+    --primary-gradient: linear-gradient(180deg, #2985fd 0%, #47b9ff 100%);
+    
+    --accent-orange: #ff7356;
+    --accent-red: #f95e66;
+    
+    --text-dark: #183b56;
+    --text-blue: #1b7897;
+    --text-gray: #597c96;
+    --text-light: #ffffff;
+    
+    --bg-light: #f5f5f5;
+    --bg-white: #ffffff;
+    
+    /* Spacing */
+    --container-width: 1200px;
+    --section-padding: 80px 0;
+    
+    /* Shadows */
+    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --button-shadow: 0 5px 15px rgba(41, 133, 253, 0.3);
+    
+    /* Border Radius */
+    --radius-small: 8px;
+    --radius-medium: 20px;
+    --radius-large: 50px;
+    --radius-circle: 50%;
+}

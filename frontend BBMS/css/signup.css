@@ -1,0 +1,574 @@
+/* ===== RESET & BASE - NO MOVEMENT ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #ffecec 0%, #fffefe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
+    background: white;
+    color: #667eea;
+    padding: 8px 14px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.back-button i {
+    font-size: 12px;
+}
+
+/* ===== BACKGROUND IMAGES ===== */
+.background {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    
+    pointer-events: none;
+}
+
+.left-bg {
+    left: 0;
+    transform: translateX(-20%);
+}
+
+.right-bg {
+    right: 0;
+    transform: translateX(20%);
+}
+
+
+
+.right-bg img {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+/* ===== SIGNUP CONTAINER ===== */
+.signup-container {
+    width: 100%;
+    max-width: 380px;  /* Pehle 450px tha, ab 380px */
+    margin: auto;
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== SIGNUP BOX ===== */
+.signup-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;  /* Chota radius */
+    padding: 20px 20px;  /* Padding chota */
+    box-shadow: 0 15px 30px rgba(66, 66, 66, 0.669);
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-height: 98vh;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    animation: floatY 3s ease-in-out infinite;
+}
+.float-y {
+    animation: floatY 3s ease-in-out infinite;
+}
+
+@keyframes floatY {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);  /* upar jayega */
+    }
+    100% {
+        transform: translateY(0);      /* wapas neeche */
+    }
+}
+
+.signup-box::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== LOGO ===== */
+.logo2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Center mein lane ke liye */
+    gap: 6px;                  /* Gap chota kiya */
+    margin-bottom: 15px;       /* Margin thoda chota */
+}
+
+.logo2 img {
+    width: 40px;    /* Pehle 50px tha, ab 40px (chota) */
+    height: 40px;   /* Pehle 50px tha, ab 40px (chota) */
+    object-fit: contain;
+    display: block;  /* Proper centering ke liye */
+    margin: 0 auto;  /* Extra centering */
+}
+/* ===== HEADER TEXT ===== */
+.header-text {
+    text-align: center;
+    margin-bottom: 15px;  /* Margin chota */
+}
+
+.header-text h2 {
+    font-size: 20px;  /* Chota */
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.header-text p {
+    font-size: 12px;  /* Chota */
+    color: #64748b;
+    line-height: 1.4;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* ===== INPUT GROUPS ===== */
+.input-group {
+    margin-bottom: 12px;  /* Margin chota */
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-size: 11px;  /* Chota */
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 3px;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i {
+    position: absolute;
+    left: 12px;  /* Chota */
+    color: #94a3b8;
+    font-size: 12px;  /* Chota */
+    transition: color 0.3s;
+}
+
+.input-field .toggle-password {
+    left: auto;
+    right: 12px;  /* Chota */
+    cursor: pointer;
+    z-index: 2;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px 12px 10px 35px;  /* Padding chota */
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;  /* Radius chota */
+    font-size: 12px;  /* Chota */
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    background: white;
+    transition: all 0.3s;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.input-field input::placeholder {
+    color: #a0afc0;
+    font-size: 11px;  /* Chota */
+}
+
+/* ===== ROW FOR FIRST NAME & LAST NAME ===== */
+.row-2 {
+    display: flex;
+    gap: 10px;  /* Gap chota */
+    margin-bottom: 0;
+}
+
+.half {
+    width: calc(50% - 5px);
+}
+
+/* ===== TERMS ROW ===== */
+.terms-row {
+    margin-bottom: 12px;  /* Margin chota */
+}
+
+.terms-row .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 11px;  /* Chota */
+    color: #475569;
+}
+
+.terms-row .checkbox input {
+    width: 14px;  /* Chota */
+    height: 14px;
+    accent-color: #667eea;
+    cursor: pointer;
+}
+
+.terms-row .checkbox span a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* ===== SIGNUP BUTTON ===== */
+.signup-btn {
+    width: 100%;
+    padding: 12px;  /* Padding chota */
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 25px;  /* Radius chota */
+    color: white;
+    font-size: 14px;  /* Chota */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 12px;  /* Margin chota */
+}
+
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* ===== LOGIN TEXT ===== */
+.login-text {
+    text-align: center;
+    font-size: 12px;  /* Chota */
+    color: #64748b;
+    margin-bottom: 12px;  /* Margin chota */
+}
+
+.login-text a {
+    color: #667eea;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 12px 0;  /* Margin chota */
+}
+
+
+
+.divider span {
+    background: white;
+    padding: 0 8px;
+    color: #64748b;
+    font-size: 11px;  /* Chota */
+}
+
+/* ===== SOCIAL SIGNUP ===== */
+.social-signup {
+    display: flex;
+    gap: 10px;  /* Gap chota */
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;  /* Padding chota */
+    border: 2px solid #e2e8f0;
+    border-radius: 25px;  /* Radius chota */
+    background: white;
+    font-size: 12px;  /* Chota */
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.social-btn i {
+    font-size: 13px;  /* Chota */
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Small Phones (<= 360px) */
+@media (max-width: 360px) {
+    .signup-container {
+        max-width: 300px;
+    }
+    
+    .signup-box {
+        padding: 15px 15px;
+    }
+    
+    .logo img {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .logo span {
+        font-size: 16px;
+    }
+    
+    .header-text h2 {
+        font-size: 18px;
+    }
+    
+    .header-text p {
+        font-size: 11px;
+    }
+    
+    .row-2 {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .half {
+        width: 100%;
+    }
+    
+    .input-field input {
+        padding: 8px 10px 8px 32px;
+        font-size: 11px;
+    }
+    
+    .signup-btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    .social-signup {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .background img {
+        width: 100px;
+    }
+}
+
+/* Medium Phones (361px - 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+    .signup-container {
+        max-width: 340px;
+    }
+    
+    .signup-box {
+        padding: 18px 18px;
+    }
+    
+    .background img {
+        width: 120px;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 650px) and (orientation: landscape) {
+    body {
+        align-items: center;
+        padding: 5px;
+    }
+    
+    .signup-container {
+        max-width: 450px;
+    }
+    
+    .signup-box {
+        padding: 12px 18px;
+        max-height: 98vh;
+    }
+    
+    .logo {
+        margin-bottom: 6px;
+    }
+    
+    .logo img {
+        width: 45px;
+        height: 22px;
+    }
+    
+    .logo span {
+        font-size: 14px;
+    }
+    
+    .header-text {
+        margin-bottom: 8px;
+    }
+    
+    .header-text h2 {
+        font-size: 16px;
+    }
+    
+    .header-text p {
+        font-size: 10px;
+        max-width: 300px;
+    }
+    
+    .input-group {
+        margin-bottom: 6px;
+    }
+    
+    .input-group label {
+        font-size: 10px;
+        margin-bottom: 2px;
+    }
+    
+    .input-field input {
+        padding: 6px 10px 6px 30px;
+        font-size: 10px;
+    }
+    
+    .input-field i {
+        left: 10px;
+        font-size: 10px;
+    }
+    
+    .row-2 {
+        gap: 6px;
+    }
+    
+    .signup-btn {
+        padding: 6px;
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+    
+    .login-text {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+    
+    .divider {
+        margin: 6px 0;
+    }
+    
+    .social-btn {
+        padding: 5px;
+        font-size: 10px;
+    }
+    
+    .background img {
+        width: 80px;
+    }
+}
+
+
+.social-btn {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 30px;
+    background: white;
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.social-btn:hover::before {
+    left: 100%;
+}
+
+.social-btn i {
+    font-size: 16px;
+    transition: all 0.4s ease;
+}
+
+/* Google Button */
+.social-btn.google:hover {
+    background: #ea4335;
+    border-color: #ea4335;
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(234, 67, 53, 0.4);
+}
+
+.social-btn.google:hover i {
+    transform: rotate(360deg) scale(1.1);
+}
+
+/* Facebook Button */
+.social-btn.facebook:hover {
+    background: #1877f2;
+    border-color: #1877f2;
+    color: white;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(24, 119, 242, 0.4);
+}
+
+.social-btn.facebook:hover i {
+    transform: rotate(360deg) scale(1.1);
+}
